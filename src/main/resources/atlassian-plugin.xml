@@ -1,0 +1,28 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+
+  <plugin-info>
+    <description>${project.description}</description>
+  		<version>${project.version}</version>
+    <vendor name="Teamlead" url="http://www.teamlead.ru"/>
+  </plugin-info>
+
+  <resource type="i18n" name="i18n" location="i18n.all"/>
+
+  <search-request-view key="searchrequest-csv-all-fields" i18n-name-key="csv-all-title" name="CSV (All fields)"
+                       class="export.SearchRequestCsvViewAllFields" state='enabled' fileExtension="csv"
+                       contentType="application/octet-stream">
+    <resource type="velocity" name="descriptionTable"
+              location="templates/plugins/searchrequestviews/searchrequest-description-header.vm"/>
+    <order>4</order>
+  </search-request-view>
+
+  <search-request-view key="searchrequest-csv-current-fields" i18n-name-key="csv-current-title"
+                       name="CSV (Current fields)" class="export.SearchRequestCsvViewCurrentFields"
+                       state='enabled' fileExtension="csv"
+                       contentType="application/octet-stream">
+    <resource type="velocity" name="descriptionTable"
+              location="templates/plugins/searchrequestviews/searchrequest-description-header.vm"/>
+    <order>5</order>
+  </search-request-view>
+
+</atlassian-plugin>
